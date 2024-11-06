@@ -649,11 +649,13 @@ Here is an example of the rendered HTML code with the class attribute:
 Poedit
 ------
 
-By default, Poedit cannot find strings to translate from Blade templates. Here is a list of parameters to add to your Poedit software preferences so it can detect translation strings from your Blade views:
+Poedit Pro 3.5 or newer has builtin support for Blade templates.
+
+As an alternative for older or free versions, it is possible to extract strings from Blade templates using the following workaround with a custom extractot. Note that this has limitations, in particular won't correctly extract from e.g. HTML attributes. Here is a list of parameters to add to your Poedit software preferences so it can detect translation strings from your Blade views:
 
 1. Open Poedit
-2. Go to Preferences -> Parsers
-3. Add a new parser with following settings:
+2. Go to Preferences -> Extractors
+3. Add a new extractor with following settings:
 	- Language: `Blade`
 	- Extension: `*.blade.php`
 	- Parser command: `xgettext --language=Python --add-comments=TRANSLATORS --force-po -o %o %C %K %F`
